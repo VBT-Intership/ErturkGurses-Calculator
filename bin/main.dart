@@ -23,6 +23,8 @@ void main() {
     if (input == 'exit') {
       print('Bana müsaade, biraz kafa dinlemeye gideyim\n');
       exit(0);
+    } else if (input == null || input == '') {
+      print('Koca bir boşluk görüyorum. Lütfen geçerli bir işlem giriniz.');
     }
 
     try {
@@ -40,7 +42,6 @@ void main() {
 
       if (result == double.infinity) {
         print('\nBir sayı sıfıra bölünemez. Lütfen girdiyi kontrol ediniz\n');
-      
       } else {
         stdout.write('\nSonuç: $result\n\n');
       }
