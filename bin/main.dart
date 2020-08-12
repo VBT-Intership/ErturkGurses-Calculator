@@ -38,11 +38,19 @@ void main() {
       // Sonucu hesaplayıp ekrana yazdık.
       result = Calculator.calculateFromPrefix(postfixEquationStack);
 
-      stdout.write('\nSonuç: $result\n\n');
+      if (result == double.infinity) {
+        print('\nBir sayı sıfıra bölünemez. Lütfen girdiyi kontrol ediniz\n');
+      
+      } else {
+        stdout.write('\nSonuç: $result\n\n');
+      }
     } catch (exception) {
-      print(exception);
-      print(
-          '\nBir hatayla karşılaştım, eğer ifadeyi düzgün yazdığından emin isen beni benimle bırak. Sorun sende değil bende.');
+      if (exception == double.infinity) {
+      } else {
+        print(exception);
+        print(
+            '\nBir hatayla karşılaştım, eğer ifadeyi düzgün yazdığından emin isen beni benimle bırak. Sorun sende değil bende.');
+      }
     }
   }
 }
